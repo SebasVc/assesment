@@ -1,0 +1,8 @@
+{
+  "createPost": {
+    "post_id": #(idPost),
+    "name": "Ekaksh Pandey",
+    "email": "pandey_ekaksh@huel.test",
+    "body": "Voluptas beatae architecto. Consequuntur dolorem quas."
+  }
+}

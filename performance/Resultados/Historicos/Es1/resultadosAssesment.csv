@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1707672417414,1119,createUser,201,Created,Thread Group 1-1,text,true,,1220,538,3,3,https://gorest.co.in/public/v2/users,1119,0,161
+1707672417895,1065,createUser,201,Created,Thread Group 1-2,text,true,,1219,537,3,3,https://gorest.co.in/public/v2/users,1065,0,133
+1707672418396,1034,createUser,201,Created,Thread Group 1-3,text,true,,1225,537,3,3,https://gorest.co.in/public/v2/users,1033,0,128
+1707672418900,1013,createUser,201,Created,Thread Group 1-4,text,true,,1222,536,3,3,https://gorest.co.in/public/v2/users,1013,0,120
+1707672419391,1122,createUser,201,Created,Thread Group 1-5,text,true,,1226,538,3,3,https://gorest.co.in/public/v2/users,1122,0,120
+1707672419897,1014,createUser,201,Created,Thread Group 1-6,text,true,,1221,537,3,3,https://gorest.co.in/public/v2/users,1014,0,124
+1707672420397,1030,createUser,201,Created,Thread Group 1-7,text,true,,1225,539,3,3,https://gorest.co.in/public/v2/users,1030,0,122
+1707672420888,1028,createUser,201,Created,Thread Group 1-8,text,true,,1224,538,3,3,https://gorest.co.in/public/v2/users,1028,0,124
+1707672421886,529,createUser,201,Created,Thread Group 1-10,text,true,,1217,537,3,3,https://gorest.co.in/public/v2/users,529,0,151
+1707672421392,1093,createUser,201,Created,Thread Group 1-9,text,true,,1222,538,2,2,https://gorest.co.in/public/v2/users,1093,0,116
+1707672422386,990,createUser,201,Created,Thread Group 1-11,text,true,,1230,538,2,2,https://gorest.co.in/public/v2/users,990,0,124
+1707672422888,1067,createUser,201,Created,Thread Group 1-12,text,true,,1219,537,3,3,https://gorest.co.in/public/v2/users,1067,0,115
+1707672423387,583,createUser,201,Created,Thread Group 1-13,text,true,,1219,537,2,2,https://gorest.co.in/public/v2/users,583,0,170
+1707672423884,1029,createUser,201,Created,Thread Group 1-14,text,true,,1218,538,3,3,https://gorest.co.in/public/v2/users,1029,0,115
+1707672424386,1126,createUser,201,Created,Thread Group 1-15,text,true,,1220,536,3,3,https://gorest.co.in/public/v2/users,1126,0,112
+1707672424882,1055,createUser,201,Created,Thread Group 1-16,text,true,,1216,538,3,3,https://gorest.co.in/public/v2/users,1055,0,113
+1707672425390,1065,createUser,201,Created,Thread Group 1-17,text,true,,1222,537,3,3,https://gorest.co.in/public/v2/users,1065,0,130
+1707672425882,1536,createUser,201,Created,Thread Group 1-18,text,true,,1215,536,3,3,https://gorest.co.in/public/v2/users,1536,0,118
+1707672426382,1373,createUser,201,Created,Thread Group 1-19,text,true,,1214,537,2,2,https://gorest.co.in/public/v2/users,1373,0,122
+1707672426882,1048,createUser,201,Created,Thread Group 1-20,text,true,,1232,539,1,1,https://gorest.co.in/public/v2/users,1048,0,128

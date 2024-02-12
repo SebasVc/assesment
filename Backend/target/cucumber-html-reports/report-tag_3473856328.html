@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Tag: @consultAllcomments</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Button Pay project</td>
+      <td>11 feb. 2024, 22:52</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Tag Report</h2>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="stats-table">
+
+
+<thead>
+  <tr class="header dont-sort">
+      <th></th>
+    <th colspan="6">Steps</th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="2">Features</th>
+  </tr>
+  <tr>
+    <th>Tag</th>
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+
+        <tbody>
+        <tr>
+          <td class="tagname">@consultAllcomments</td>
+          <td      class="passed"    >4</td>
+          <td >0</td>
+          <td >0</td>
+          <td >0</td>
+          <td >0</td>
+          <td class="total">4</td>
+
+          <td  class="passed"    >1</td>
+          <td >0</td>
+          <td class="total">1</td>
+
+          <td class="duration" data-value="3754696500">3.754</td>
+          <td class="passed">Passed</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="elements">
+
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_2516045009.html">com/co/gorest/comments/feature/comments.feature</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_1832099379.html">@comments</a>
+       <a href="report-tag_4059758862.html">@Smoke</a>
+       <a href="report-tag_3473856328.html">@consultAllcomments</a>
+</div>
+
+
+  <span class="lead-duration duration">3.754</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">1 - Conultar el listado completo de comentarios</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention">Dado un usuario que desea consultar todos los comentarios registrados
+  Cuando consume el servicio comments sin enviar el id de un comentario
+  Entonces se debe mostrar la informaci&oacute;n de todos los comentarios</div>
+
+  <div id="element-1" class="collapse collapsable-details ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-2" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">method get</span>
+
+  <span class="lead-duration duration">3.662</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-3">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details">
+        <pre>22:51:52.555 request:
+1 &gt; GET https://gorest.co.in/public/v2/comments
+1 &gt; Host: gorest.co.in
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+22:51:54.724 response time in milliseconds: 2162
+1 &lt; 200
+1 &lt; Date: Mon, 12 Feb 2024 03:51:54 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Cache-Control: max-age=0, private, must-revalidate
+1 &lt; etag: W/&quot;eebe3470788575cf23625ac0508ab788&quot;
+1 &lt; referrer-policy: strict-origin-when-cross-origin
+1 &lt; vary: Origin
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-download-options: noopen
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; x-links-current: https://gorest.co.in/public/v2/comments?page=1
+1 &lt; x-links-next: https://gorest.co.in/public/v2/comments?page=2
+1 &lt; x-links-previous: 
+1 &lt; x-pagination-limit: 10
+1 &lt; x-pagination-page: 1
+1 &lt; x-pagination-pages: 305
+1 &lt; x-pagination-total: 3047
+1 &lt; x-permitted-cross-domain-policies: none
+1 &lt; x-request-id: e203168f-5fef-4bb1-ae59-91ef9dde374c
+1 &lt; x-runtime: 0.059436
+1 &lt; x-xss-protection: 0
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=Ek9rQsrlSOnNP4R1D6OFn5hrs3k6oqcBvY88pg6iku3eU4TB%2B8LuhvITCtVxljFZg67xThFJTBXvDr5HH6AEqodG27SHqcpkJ9TBLJibGclLi5TiDAcRfr7pfWFBGGk%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 8541e031cfb46ddf-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+[{&quot;id&quot;:80624,&quot;post_id&quot;:101594,&quot;name&quot;:&quot;Bankim Khanna&quot;,&quot;email&quot;:&quot;bankim_khanna@jenkins-metz.example&quot;,&quot;body&quot;:&quot;Esse quas ut. Modi aliquam blanditiis. Debitis deleniti quo. Et maxime similique.&quot;},{&quot;id&quot;:80623,&quot;post_id&quot;:101590,&quot;name&quot;:&quot;Kalinda Pilla JD&quot;,&quot;email&quot;:&quot;jd_pilla_kalinda@anderson.example&quot;,&quot;body&quot;:&quot;Voluptates recusandae molestiae. Aspernatur enim ut.&quot;},{&quot;id&quot;:80621,&quot;post_id&quot;:101589,&quot;name&quot;:&quot;Mina Pillai Esq.&quot;,&quot;email&quot;:&quot;mina_pillai_esq@hettinger.example&quot;,&quot;body&quot;:&quot;Magnam qui molestiae. Quis quidem molestias. Rem voluptatum et. Autem itaque maxime.&quot;},{&quot;id&quot;:80620,&quot;post_id&quot;:101588,&quot;name&quot;:&quot;Vidhya Tagore&quot;,&quot;email&quot;:&quot;vidhya_tagore@kautzer-mitchell.test&quot;,&quot;body&quot;:&quot;Non ducimus consequatur. Quisquam repellat illo. Qui ipsam occaecati.&quot;},{&quot;id&quot;:80619,&quot;post_id&quot;:101587,&quot;name&quot;:&quot;Sheela Talwar&quot;,&quot;email&quot;:&quot;talwar_sheela@kutch-rippin.example&quot;,&quot;body&quot;:&quot;Consequuntur quasi iusto. Explicabo id ut.&quot;},{&quot;id&quot;:80618,&quot;post_id&quot;:101587,&quot;name&quot;:&quot;The Hon. Agrata Patil&quot;,&quot;email&quot;:&quot;the_hon_patil_agrata@fay.example&quot;,&quot;body&quot;:&quot;Distinctio voluptas in. Nihil sunt consequatur. Dolores voluptatem aliquam.&quot;},{&quot;id&quot;:80617,&quot;post_id&quot;:101586,&quot;name&quot;:&quot;Dharmaketu Pandey&quot;,&quot;email&quot;:&quot;dharmaketu_pandey@yost.test&quot;,&quot;body&quot;:&quot;Voluptatibus suscipit nisi. Molestiae officiis maiores. Et perspiciatis esse. Consequuntur nihil labore.&quot;},{&quot;id&quot;:80616,&quot;post_id&quot;:101586,&quot;name&quot;:&quot;Opaline Guha Ret.&quot;,&quot;email&quot;:&quot;opaline_ret_guha@hoeger.example&quot;,&quot;body&quot;:&quot;Id harum perspiciatis. Minus voluptatem dolores. Ut et et. Corporis distinctio ad.&quot;},{&quot;id&quot;:80615,&quot;post_id&quot;:101583,&quot;name&quot;:&quot;Miss Shresth Verma&quot;,&quot;email&quot;:&quot;miss_shresth_verma@cassin.test&quot;,&quot;body&quot;:&quot;Dolorum sit iusto.&quot;},{&quot;id&quot;:80614,&quot;post_id&quot;:101583,&quot;name&quot;:&quot;Gudakesha Shah&quot;,&quot;email&quot;:&quot;shah_gudakesha@koelpin.example&quot;,&quot;body&quot;:&quot;Voluptatem praesentium quia. Provident et ipsum.&quot;}]
+
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">status 200</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">assert responseTime &lt;= 5000</span>
+
+  <span class="lead-duration duration">0.011</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">def firstPost = karate.jsonPath(response, '$[0].id')</span>
+
+  <span class="lead-duration duration">0.080</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

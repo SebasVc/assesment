@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Tag: @listAllPosts</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Button Pay project</td>
+      <td>11 feb. 2024, 22:52</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Tag Report</h2>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="stats-table">
+
+
+<thead>
+  <tr class="header dont-sort">
+      <th></th>
+    <th colspan="6">Steps</th>
+    <th colspan="3">Scenarios</th>
+    <th colspan="2">Features</th>
+  </tr>
+  <tr>
+    <th>Tag</th>
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="skipped">Skipped</th>
+    <th class="pending">Pending</th>
+    <th class="undefined">Undefined</th>
+    <th class="total">Total</th>
+
+    <th class="passed">Passed</th>
+    <th class="failed">Failed</th>
+    <th class="total">Total</th>
+
+    <th>Duration</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+
+        <tbody>
+        <tr>
+          <td class="tagname">@listAllPosts</td>
+          <td      class="passed"    >5</td>
+          <td >0</td>
+          <td >0</td>
+          <td >0</td>
+          <td >0</td>
+          <td class="total">5</td>
+
+          <td  class="passed"    >1</td>
+          <td >0</td>
+          <td class="total">1</td>
+
+          <td class="duration" data-value="974281100">0.974</td>
+          <td class="passed">Passed</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="elements">
+
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_1_3017659111.html">com/co/gorest/posts/feature/posts.feature</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_3417646511.html">@listAllPosts</a>
+       <a href="report-tag_4057052018.html">@Posts</a>
+       <a href="report-tag_4059758862.html">@Smoke</a>
+</div>
+
+
+  <span class="lead-duration duration">0.974</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario</span>
+  <span class="name">1 - Listar todos los posts</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention">Dado un usuario que desea visualizar todos los posts
+    Cuando consume el servicio sin especificar ID
+    Entonces se muestra el listado de todos los posts</div>
+
+  <div id="element-1" class="collapse collapsable-details ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-2" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">method get</span>
+
+  <span class="lead-duration duration">0.969</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-3">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details">
+        <pre>22:52:18.349 request:
+1 &gt; GET https://gorest.co.in/public/v2/posts
+1 &gt; Host: gorest.co.in
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+22:52:19.313 response time in milliseconds: 963
+1 &lt; 200
+1 &lt; Date: Mon, 12 Feb 2024 03:52:19 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Cache-Control: max-age=0, private, must-revalidate
+1 &lt; etag: W/&quot;8cc6450a56ca837db04dab231b7996c8&quot;
+1 &lt; referrer-policy: strict-origin-when-cross-origin
+1 &lt; vary: Origin
+1 &lt; x-content-type-options: nosniff
+1 &lt; x-download-options: noopen
+1 &lt; x-frame-options: SAMEORIGIN
+1 &lt; x-links-current: https://gorest.co.in/public/v2/posts?page=1
+1 &lt; x-links-next: https://gorest.co.in/public/v2/posts?page=2
+1 &lt; x-links-previous: 
+1 &lt; x-pagination-limit: 10
+1 &lt; x-pagination-page: 1
+1 &lt; x-pagination-pages: 306
+1 &lt; x-pagination-total: 3054
+1 &lt; x-permitted-cross-domain-policies: none
+1 &lt; x-request-id: c32bd7b1-2298-45a6-899e-a17a9f98c079
+1 &lt; x-runtime: 0.039867
+1 &lt; x-xss-protection: 0
+1 &lt; CF-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https:\/\/a.nel.cloudflare.com\/report\/v3?s=vlKcX5398rMPHccXLMJO8MCA8wneCsaMewe9m7dXMiPaLF%2BFReFqNtXyIGKK1cOLb0dHGtt2hlgS68X4RTIhfVchg4awYQwbKWvy3VpQQOwAUdyOKPTNQOdddQcK3GE%3D&quot;}],&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; NEL: {&quot;success_fraction&quot;:0,&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 8541e0cbdd3cdacd-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+[{&quot;id&quot;:101594,&quot;user_id&quot;:6265172,&quot;title&quot;:&quot;Vado accipio caput architecto vicinus infit tot.&quot;,&quot;body&quot;:&quot;Angulus cunabula stipes. Praesentium adversus spiculum. Depopulo optio solus. Sordeo perferendis explicabo. Arto cunctatio atque. Commodi desolo uterque. Aequus considero administratio. Defaeco aqua tantum. Caritas vix patior. Aeternus tam alo. Officiis veritas cum.&quot;},{&quot;id&quot;:101593,&quot;user_id&quot;:6265171,&quot;title&quot;:&quot;Depopulo sui deludo derelinquo deputo delicate acies.&quot;,&quot;body&quot;:&quot;Vir numquam arbor. Qui ea adhuc. Creber soleo pecto. Tolero vomer barba. Curtus suscipit vesica. Vapulus itaque tolero. Traho timidus tabernus. Delinquo tempus curso. Carus temptatio eaque. Excepturi creo dignissimos. Cupio acquiro vulpes. Sortitus adinventitias unus. Antea thesaurus tergo. Amicitia arca patrocinor.&quot;},{&quot;id&quot;:101592,&quot;user_id&quot;:6265171,&quot;title&quot;:&quot;Coerceo cubo vilitas undique adiuvo dedico cognomen praesentium.&quot;,&quot;body&quot;:&quot;Quidem inventore iste. Thermae arguo dolor. Ascisco architecto charisma. Averto nobis vesco. Curriculum vitiosus conventus. Peior thermae pax. Ocer suasoria vado. Universe delibero est. Magnam cresco dedico. Atavus ambitus vindico. Eos carbo claudeo.&quot;},{&quot;id&quot;:101591,&quot;user_id&quot;:6265170,&quot;title&quot;:&quot;Adulatio autem adultus talio sodalitas capillus cado aeneus voluptatum.&quot;,&quot;body&quot;:&quot;Bos alii tollo. Verecundia aetas annus. Defluo sublime usus. Ipsam tricesimus tepesco. Cognatus cruciamentum pecunia. Autus tero thesis. Libero vero coma. Antiquus cur depulso. Incidunt creber dolor. Desipio angelus clementia. Conatus degusto non. Uberrime altus valeo. Accusantium non succedo. Ait suppono utique. Volaticus dolorem alienus. Decet cedo adfectus. Mollitia aequitas succurro. Tum ascit nostrum.&quot;},{&quot;id&quot;:101590,&quot;user_id&quot;:6265167,&quot;title&quot;:&quot;Conitor admitto culpa congregatio uberrime brevis nesciunt thorax.&quot;,&quot;body&quot;:&quot;Paulatim auris urbanus. Sit explicabo vix. Annus sint testimonium. Corrupti vinitor sit. Quia vel volubilis. Acer aqua sortitus. Vigor cuius confido. Carpo quam est. Corrigo administratio animi. Velut aiunt amaritudo. Eum censura appono. Verumtamen copia ducimus. Aequitas sophismata curvus. Credo bonus comparo. Adipisci sunt solitudo.&quot;},{&quot;id&quot;:101589,&quot;user_id&quot;:6265166,&quot;title&quot;:&quot;Vultuosus tollo quo calculus comminor.&quot;,&quot;body&quot;:&quot;Tepesco acsi validus. Conatus supra creptio. Campana articulus compono. Volva spero bestia. Aut perspiciatis cattus. Articulus vinitor virga. Urbanus turba spectaculum. Sustineo arx clam. Rerum aut uredo. Animadverto id vel. Tergeo appositus xiphias. Cimentarius virgo strenuus. Surculus defessus molestiae. Decimus eum amitto.&quot;},{&quot;id&quot;:101588,&quot;user_id&quot;:6265164,&quot;title&quot;:&quot;Spoliatio dens auditor abundans demens vester.&quot;,&quot;body&quot;:&quot;Dolor vicissitudo capto. Absorbeo absens aliqua. Suasoria vaco commodi. Cunabula cultellus voluntarius. Voluptatem caute ut. Defluo tamquam aeger. In stabilis cubicularis. Alienus attonbitus cruciamentum. Desparatus velit thymum. Conscendo verecundia nam. Cognomen comminor calamitas. Conscendo cruentus vitiosus. Averto adaugeo vetus. Conservo sollers civitas. Comminor totidem textor.&quot;},{&quot;id&quot;:101587,&quot;user_id&quot;:6265162,&quot;title&quot;:&quot;Et circumvenio thema atque civitas auditor repellat capio.&quot;,&quot;body&quot;:&quot;Derideo non laudantium. Triginta demoror solus. Sol attero dicta. Degero sumo rerum. Undique ager consequatur. Defungo claro vilicus. Vae vesper angulus. Sortitus cruentus tamisium. Communis ventosus cras. Tamquam rem ver. Denique truculenter uxor. Cetera vicissitudo reiciendis. Denego suadeo decerno. Pariatur pauci similique.&quot;},{&quot;id&quot;:101586,&quot;user_id&quot;:6265162,&quot;title&quot;:&quot;Facere viscus aranea iusto super crepusculum eligendi civis defetiscor.&quot;,&quot;body&quot;:&quot;Calculus caste crapula. Pecto curso tempora. Comprehendo angustus patrocinor. Autem comburo taceo. Rem soluta apud. Et tracto tam. Porro dolores culpo. Commemoro nemo vito. Et aeternus nemo. Vomer terminatio undique. Arca adipiscor canonicus. Viduata validus arguo. Incidunt solitudo volup. Solus stips angulus.&quot;},{&quot;id&quot;:101585,&quot;user_id&quot;:6265161,&quot;title&quot;:&quot;Sustineo valetudo non vesper cognatus culpo infit vulnus sequi.&quot;,&quot;body&quot;:&quot;Veniam usque aiunt. Ultra tibi vel. Suspendo commodo consuasor. Coepi abstergo aveho. Cresco tergeo tondeo. Paens caute temeritas. Comburo carmen amplus. Clam amoveo aveho. Creta impedit taedium. Peccatus recusandae suus. Advenio quia adfero. Statim est arceo.&quot;}]
+
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">status 200</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">assert responseTime &lt;= 5000</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">def firstPost = karate.jsonPath(response, '$[0].id')</span>
+
+  <span class="lead-duration duration">0.002</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-* passed">
+  <span class="keyword indention">*</span>
+  <span class="name">print 'mi primera chamba: ' +firstPost</span>
+
+  <span class="lead-duration duration">0.001</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+  <div class="inner-level">
+    <div class="docstring indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-4">
+          <a>Doc string</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details">
+        <pre>22:52:19.319 [print] mi primera chamba: 101594 
+</pre>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 col-md-offset-10">
+      <i class="fa fa-chevron-circle-down fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('show')"></i>
+      <i class="fa fa-chevron-circle-up fa-2x collapsable-control"
+        onClick="javascript:$('#report .collapsable-details').collapse('hide')"></i>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<testsuite failures="0" name="com/co/gorest/comments/feature/comments.feature" skipped="0" tests="5" time="21.815644"><testcase classname="com.co.gorest.comments.feature.comments" name="1 - Conultar el listado completo de comentarios" time="4.004985"><system-out>* url baseUrl ............................................................. passed
+* path '/comments' ........................................................ passed
+* def dataResponse = read('classpath:com/co/gorest/comments/response/responseComments.json') . passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+Then assert responseTime &lt;= 5000 .......................................... passed
+* def firstPost = karate.jsonPath(response, '$[0].id') .................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.comments.feature.comments" name="2 - Crear un  comentario" time="4.366207"><system-out>* url baseUrl ............................................................. passed
+* path '/comments' ........................................................ passed
+* def dataResponse = read('classpath:com/co/gorest/comments/response/responseComments.json') . passed
+* def createPost = call read('classpath:com/co/gorest/posts/feature/posts.feature@createAPost') . passed
+* def idPost = createPost.idPost .......................................... passed
+* def dataRequest = read('classpath:com/co/gorest/comments/request/commentsRequest.json') . passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And request dataRequest.createPost ........................................ passed
+When method post .......................................................... passed
+Then status 201 ........................................................... passed
+And match response == dataResponse.responseCommentCreated ................. passed
+And assert responseTime &lt;= 5000 ........................................... passed
+* def idComment = response.id ............................................. passed
+* print 'Identificador del comentario: '  + idComment ..................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.comments.feature.comments" name="3 - Consulta  de  comentarios" time="4.811131"><system-out>* url baseUrl ............................................................. passed
+* path '/comments' ........................................................ passed
+* def dataResponse = read('classpath:com/co/gorest/comments/response/responseComments.json') . passed
+* def createcomment = call read('classpath:com/co/gorest/comments/feature/comments.feature@createComment') . passed
+* def idComment = createcomment.idComment ................................. passed
+* print 'tengo esto : ' + idComment ....................................... passed
+* print 'mando esto  : ' + idComment ...................................... passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And path + idComment ...................................................... passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And match response == dataResponse.responseCommentCreated2 ................ passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.comments.feature.comments" name="3 - Consulta  de  comentarios" time="4.298317"><system-out>* url baseUrl ............................................................. passed
+* path '/comments' ........................................................ passed
+* def dataResponse = read('classpath:com/co/gorest/comments/response/responseComments.json') . passed
+* def createcomment = call read('classpath:com/co/gorest/comments/feature/comments.feature@createComment') . passed
+* def idComment = createcomment.idComment ................................. passed
+* print 'tengo esto : ' + idComment ....................................... passed
+* print 'mando esto  : ' + 10010 .......................................... passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And path + 10010 .......................................................... passed
+When method get ........................................................... passed
+Then status 404 ........................................................... passed
+And match response == dataResponse.commentNotRegister ..................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.comments.feature.comments" name="4 - Eliminacion de  comentario" time="4.335004"><system-out>* url baseUrl ............................................................. passed
+* path '/comments' ........................................................ passed
+* def dataResponse = read('classpath:com/co/gorest/comments/response/responseComments.json') . passed
+* def createcomment = call read('classpath:com/co/gorest/comments/feature/comments.feature@createComment') . passed
+* def idComment = createcomment.idComment ................................. passed
+* def dataRequest = read('classpath:com/co/gorest/comments/request/commentsRequest.json') . passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And path + idComment ...................................................... passed
+When method delete ........................................................ passed
+Then status 204 ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+</system-out></testcase>
+</testsuite>

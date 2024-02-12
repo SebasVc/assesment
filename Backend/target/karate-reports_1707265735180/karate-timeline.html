@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[1:10]","start":1707265633797,"end":1707265637610,"title":"com\/co\/gorest\/comments\/feature\/comments[1:10] 19:27:13.797-19:27:17.610 1 - Conultar el listado completo de comentarios"},{"id":2,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[2:21]","start":1707265637625,"end":1707265640003,"title":"com\/co\/gorest\/comments\/feature\/comments[2:21] 19:27:17.625-19:27:20.003 2 - Crear un  comentario"},{"id":3,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[3.1:53]","start":1707265640017,"end":1707265643332,"title":"com\/co\/gorest\/comments\/feature\/comments[3.1:53] 19:27:20.017-19:27:23.332 3 - Consulta  de  comentarios"},{"id":4,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[3.2:54]","start":1707265643339,"end":1707265647080,"title":"com\/co\/gorest\/comments\/feature\/comments[3.2:54] 19:27:23.339-19:27:27.080 3 - Consulta  de  comentarios"},{"id":5,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[1:9]","start":1707265648845,"end":1707265649354,"title":"com\/co\/gorest\/posts\/feature\/posts[1:9] 19:27:28.845-19:27:29.354 1 - Listar todos los posts"},{"id":6,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[2:20]","start":1707265649358,"end":1707265650897,"title":"com\/co\/gorest\/posts\/feature\/posts[2:20] 19:27:29.358-19:27:30.897 2 - Crear un post en especifico"},{"id":7,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[3:37]","start":1707265650900,"end":1707265651880,"title":"com\/co\/gorest\/posts\/feature\/posts[3:37] 19:27:30.900-19:27:31.880 3 - Consultar un post en especifico","className":"failed"},{"id":8,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[4:48]","start":1707265651884,"end":1707265652883,"title":"com\/co\/gorest\/posts\/feature\/posts[4:48] 19:27:31.884-19:27:32.883 4 - Consultar un post inexistente"},{"id":9,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[5:58]","start":1707265652890,"end":1707265655107,"title":"com\/co\/gorest\/posts\/feature\/posts[5:58] 19:27:32.890-19:27:35.107 5 - Eliminar un post existente"},{"id":10,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[1:12]","start":1707265655444,"end":1707265656447,"title":"com\/co\/gorest\/users\/feature\/users[1:12] 19:27:35.444-19:27:36.447 1 - Validar el listado completo de los usuarios registrados"},{"id":11,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[2:20]","start":1707265656451,"end":1707265657029,"title":"com\/co\/gorest\/users\/feature\/users[2:20] 19:27:36.451-19:27:37.029 2 - Creacion exitosa de un usario"},{"id":12,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[3:36]","start":1707265657035,"end":1707265658636,"title":"com\/co\/gorest\/users\/feature\/users[3:36] 19:27:37.035-19:27:38.636 3 - Modificacion exitosa de un usario"},{"id":13,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[4:51]","start":1707265658639,"end":1707265660171,"title":"com\/co\/gorest\/users\/feature\/users[4:51] 19:27:38.639-19:27:40.171 4 - Eliminación exitosa de un usario"},{"id":14,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[5:64]","start":1707265660175,"end":1707265661753,"title":"com\/co\/gorest\/users\/feature\/users[5:64] 19:27:40.175-19:27:41.753 5 - Consulta de un usuario previamente creado"},{"id":15,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[6:82]","start":1707265661757,"end":1707265662756,"title":"com\/co\/gorest\/users\/feature\/users[6:82] 19:27:41.757-19:27:42.756 6 - Consulta de un usuario no registrado"},{"id":16,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[7:93]","start":1707265662760,"end":1707265663281,"title":"com\/co\/gorest\/users\/feature\/users[7:93] 19:27:42.760-19:27:43.281 7 - Creacion de un usuario con email repetido"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

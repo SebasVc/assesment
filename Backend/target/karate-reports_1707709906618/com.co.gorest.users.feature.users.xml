@@ -1,0 +1,95 @@
+<testsuite failures="0" name="com/co/gorest/users/feature/users.feature" skipped="0" tests="7" time="9.529033"><testcase classname="com.co.gorest.users.feature.users" name="1 - Validar el listado completo de los usuarios registrados" time="1.014573"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.users.feature.users" name="2 - Creacion exitosa de un usario" time="1.052921"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+* print 'El correo es: ' +randomEmail ..................................... passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And request dataRequest.createUser ........................................ passed
+When method post .......................................................... passed
+Then status 201 ........................................................... passed
+And match response == dataResponse.responseUserCreated .................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+* def idUserCreated = response.id ......................................... passed
+* def emailUser = response.email .......................................... passed
+* print idUserCreated ..................................................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.users.feature.users" name="3 - Modificacion exitosa de un usario" time="2.22797"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+* def createUser = call read('classpath:com/co/gorest/users/feature/users.feature@createUser') . passed
+* def idUserCreated = createUser.idUserCreated ............................ passed
+Given path + idUserCreated ................................................ passed
+And header Authorization = 'Bearer ' + accessToken ........................ passed
+And request dataRequest.updateUser ........................................ passed
+When method patch ......................................................... passed
+Then status 200 ........................................................... passed
+And match response == dataResponse.responseUserUpdated .................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.users.feature.users" name="4 - Eliminación exitosa de un usario" time="1.659201"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+* def createUser = call read('classpath:com/co/gorest/users/feature/users.feature@createUser') . passed
+* def idUserCreated = createUser.idUserCreated ............................ passed
+Given path + idUserCreated ................................................ passed
+And header Authorization = 'Bearer ' + accessToken ........................ passed
+When method delete ........................................................ passed
+Then status 204 ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.users.feature.users" name="5 - Consulta de un usuario previamente creado" time="2.030254"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+* def createUser = call read('classpath:com/co/gorest/users/feature/users.feature@createUser') . passed
+* def idUserCreated = createUser.response.id .............................. passed
+Given path + idUserCreated ................................................ passed
+And header Authorization = 'Bearer ' + accessToken ........................ passed
+When method get ........................................................... passed
+Then status 200 ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+And match response.id == createUser.response.id ........................... passed
+And match response.name == createUser.response.name ....................... passed
+And match response.email == createUser.response.email ..................... passed
+And match response.gender == createUser.response.gender ................... passed
+And match response.status == createUser.response.status ................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.users.feature.users" name="6 - Consulta de un usuario no registrado" time="0.983425"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+Given path + '1010' ....................................................... passed
+When method get ........................................................... passed
+Then status 404 ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+And match response == dataResponse.ResponseUserNotRegister ................ passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.users.feature.users" name="7 - Creacion de un usuario con email repetido" time="0.56069"><system-out>* url baseUrl ............................................................. passed
+* path '/users' ........................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataRequest = read('classpath:com/co/gorest/users/request/usersRequest.json') . passed
+* def dataResponse = read('classpath:com/co/gorest/users/response/responseUsers.json') . passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And request dataRequest.createExistUser ................................... passed
+And retry until responseStatus == 422 ..................................... passed
+When method post .......................................................... passed
+Then status 422 ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+And match response == dataResponse.responseEmailExists .................... passed
+</system-out></testcase>
+</testsuite>

@@ -1,0 +1,70 @@
+<testsuite failures="1" name="com/co/gorest/posts/feature/posts.feature" skipped="0" tests="5" time="4.941456"><testcase classname="com.co.gorest.posts.feature.posts" name="1 - Listar todos los posts" time="0.50629"><system-out>* url baseUrl ............................................................. passed
+* path '/posts/' .......................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataResponse = read('classpath:com/co/gorest/posts/response/responsePosts.json') . passed
+Given method get .......................................................... passed
+When status 200 ........................................................... passed
+Then assert responseTime &lt;= 5000 .......................................... passed
+* def firstPost = karate.jsonPath(response, '$[0].id') .................... passed
+* print 'mi primera chamba: ' +firstPost .................................. passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.posts.feature.posts" name="2 - Crear un post en especifico" time="1.833937"><system-out>* url baseUrl ............................................................. passed
+* path '/posts/' .......................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataResponse = read('classpath:com/co/gorest/posts/response/responsePosts.json') . passed
+* def createUser = call read('classpath:com/co/gorest/users/feature/users.feature@createUser') . passed
+* def idUserCreated = createUser.idUserCreated ............................ passed
+* def dataRequest = read('classpath:com/co/gorest/posts/request/postsRequest.json') . passed
+* print 'este es el id: ' + idUserCreated ................................. passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And request dataRequest.createPost ........................................ passed
+When method post .......................................................... passed
+Then status 201 ........................................................... passed
+And match response == dataResponse.responsePostCreated .................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+* def idPost = response.id ................................................ passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.posts.feature.posts" name="3 - Consultar un post en especifico" time="0.012507"><failure message="js failed:&#10;&gt;&gt;&gt;&gt;&#10;01:  +  idPost&#10;&lt;&lt;&lt;&lt;&#10;org.graalvm.polyglot.PolyglotException: ReferenceError: &quot;idPost&quot; is not defined&#10;- &lt;js&gt;.:program(Unnamed:1)&#10;&#10;classpath:com/co/gorest/posts/feature/posts.feature:42">* url baseUrl ............................................................. passed
+* path '/posts/' .......................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataResponse = read('classpath:com/co/gorest/posts/response/responsePosts.json') . passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And path  +  idPost ....................................................... failed
+
+Stack Trace:
+com.intuit.karate.KarateException: js failed:
+&gt;&gt;&gt;&gt;
+01:  +  idPost
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: ReferenceError: "idPost" is not defined
+- &lt;js&gt;.:program(Unnamed:1)
+
+classpath:com/co/gorest/posts/feature/posts.feature:42&#13;
+	at &lt;feature&gt;.: And path  +  idPost (classpath:com/co/gorest/posts/feature/posts.feature:42:42)&#13;
+
+When method get ........................................................... skipped
+Then status 200 ........................................................... skipped
+And assert responseTime &lt;= 5000 ........................................... skipped
+And match response == dataResponse.responsePostCreated .................... skipped
+</failure></testcase>
+<testcase classname="com.co.gorest.posts.feature.posts" name="4 - Consultar un post inexistente" time="0.486646"><system-out>* url baseUrl ............................................................. passed
+* path '/posts/' .......................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataResponse = read('classpath:com/co/gorest/posts/response/responsePosts.json') . passed
+Given path + '1010' ....................................................... passed
+When method get ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+And match response == dataResponse.responsePostInexists ................... passed
+</system-out></testcase>
+<testcase classname="com.co.gorest.posts.feature.posts" name="5 - Eliminar un post existente" time="2.102076"><system-out>* url baseUrl ............................................................. passed
+* path '/posts/' .......................................................... passed
+* def randomEmail = call read('classpath:com/co/gorest/utils/functionJS/RandomEmail.js') . passed
+* def dataResponse = read('classpath:com/co/gorest/posts/response/responsePosts.json') . passed
+* def createPost = call read('classpath:com/co/gorest/posts/feature/posts.feature@createAPost') . passed
+Given header Authorization = 'Bearer ' + accessToken ...................... passed
+And path + createPost.idPost .............................................. passed
+When method delete ........................................................ passed
+Then status 204 ........................................................... passed
+And assert responseTime &lt;= 5000 ........................................... passed
+</system-out></testcase>
+</testsuite>

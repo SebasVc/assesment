@@ -1,0 +1,27 @@
+{
+  "createUser": {
+    "name": "tester tester",
+    "gender": "male",
+    "email": "#(randomEmail)",
+    "status": "active"
+  },
+  "updateUser": {
+    "name": "Usuario modificado",
+    "gender": "male",
+    "email": "#(randomEmail)",
+    "status": "active"
+  },
+  "consultUser": {
+    "id": #(id),
+    "name": "#(name)",
+    "email": "#(email)",
+    "gender": "#(gender)",
+    "status": "#(status)"
+  },
+  "createExistUser": {
+    "name": "tester tester",
+    "gender": "male",
+    "email": "test@test.com",
+    "status": "active"
+  }
+}

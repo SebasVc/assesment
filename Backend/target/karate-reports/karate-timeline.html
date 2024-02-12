@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[1:10]","start":1707709910578,"end":1707709914831,"title":"com\/co\/gorest\/comments\/feature\/comments[1:10] 22:51:50.578-22:51:54.831 1 - Conultar el listado completo de comentarios"},{"id":2,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[2:21]","start":1707709914855,"end":1707709919236,"title":"com\/co\/gorest\/comments\/feature\/comments[2:21] 22:51:54.855-22:51:59.236 2 - Crear un  comentario"},{"id":3,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[3.1:53]","start":1707709919263,"end":1707709924098,"title":"com\/co\/gorest\/comments\/feature\/comments[3.1:53] 22:51:59.263-22:52:04.098 3 - Consulta  de  comentarios"},{"id":4,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[3.2:54]","start":1707709924103,"end":1707709928403,"title":"com\/co\/gorest\/comments\/feature\/comments[3.2:54] 22:52:04.103-22:52:08.403 3 - Consulta  de  comentarios"},{"id":5,"group":1,"content":"com\/co\/gorest\/comments\/feature\/comments[4:57]","start":1707709928412,"end":1707709932751,"title":"com\/co\/gorest\/comments\/feature\/comments[4:57] 22:52:08.412-22:52:12.751 4 - Eliminacion de  comentario"},{"id":6,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[1:9]","start":1707709938320,"end":1707709939319,"title":"com\/co\/gorest\/posts\/feature\/posts[1:9] 22:52:18.320-22:52:19.319 1 - Listar todos los posts"},{"id":7,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[2:20]","start":1707709939327,"end":1707709941047,"title":"com\/co\/gorest\/posts\/feature\/posts[2:20] 22:52:19.327-22:52:21.047 2 - Crear un post en especifico"},{"id":8,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[3:37]","start":1707709941055,"end":1707709944382,"title":"com\/co\/gorest\/posts\/feature\/posts[3:37] 22:52:21.055-22:52:24.382 3 - Consultar un post en especifico"},{"id":9,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[4:51]","start":1707709944389,"end":1707709945049,"title":"com\/co\/gorest\/posts\/feature\/posts[4:51] 22:52:24.389-22:52:25.049 4 - Consultar un post inexistente"},{"id":10,"group":1,"content":"com\/co\/gorest\/posts\/feature\/posts[5:61]","start":1707709945057,"end":1707709947627,"title":"com\/co\/gorest\/posts\/feature\/posts[5:61] 22:52:25.057-22:52:27.627 5 - Eliminar un post existente"},{"id":11,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[1:12]","start":1707709948655,"end":1707709949680,"title":"com\/co\/gorest\/users\/feature\/users[1:12] 22:52:28.655-22:52:29.680 1 - Validar el listado completo de los usuarios registrados"},{"id":12,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[2:20]","start":1707709949686,"end":1707709950520,"title":"com\/co\/gorest\/users\/feature\/users[2:20] 22:52:29.686-22:52:30.520 2 - Creacion exitosa de un usario"},{"id":13,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[3:36]","start":1707709950526,"end":1707709952729,"title":"com\/co\/gorest\/users\/feature\/users[3:36] 22:52:30.526-22:52:32.729 3 - Modificacion exitosa de un usario"},{"id":14,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[4:51]","start":1707709952732,"end":1707709954331,"title":"com\/co\/gorest\/users\/feature\/users[4:51] 22:52:32.732-22:52:34.331 4 - Eliminación exitosa de un usario"},{"id":15,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[5:64]","start":1707709954337,"end":1707709956399,"title":"com\/co\/gorest\/users\/feature\/users[5:64] 22:52:34.337-22:52:36.399 5 - Consulta de un usuario previamente creado"},{"id":16,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[6:82]","start":1707709956403,"end":1707709957343,"title":"com\/co\/gorest\/users\/feature\/users[6:82] 22:52:36.403-22:52:37.343 6 - Consulta de un usuario no registrado"},{"id":17,"group":1,"content":"com\/co\/gorest\/users\/feature\/users[7:93]","start":1707709957347,"end":1707709958339,"title":"com\/co\/gorest\/users\/feature\/users[7:93] 22:52:37.347-22:52:38.339 7 - Creacion de un usuario con email repetido"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

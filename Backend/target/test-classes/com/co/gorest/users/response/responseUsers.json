@@ -1,0 +1,24 @@
+{
+  "responseUserCreated": {
+    "id": #number,
+    "name": "#string",
+    "email": "#string",
+    "gender": "#string",
+    "status": "#string"
+  },
+  "responseUserUpdated": {
+    "email": "#string",
+    "name": "Usuario modificado",
+    "status": "#string",
+    "id": #number,
+    "gender": "#string"
+  },
+  "ResponseUserNotRegister": {
+    "message": "Resource not found"
+  },
+  "responseEmailExists": [{
+    "field": "email",
+    "message": "has already been taken"
+  }]
+
+}

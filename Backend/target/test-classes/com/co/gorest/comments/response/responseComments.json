@@ -1,0 +1,22 @@
+{
+  "responseCommentCreated":
+  {
+        "id": #number,
+        "post_id": #(idPost),
+        "name": "#string",
+        "email": "#string",
+        "body": "#string"
+  },
+  "commentNotRegister":
+  {
+    "message": "Resource not found"
+  },
+  "responseCommentCreated2":
+  {
+    "id": #number,
+    "post_id": #number,
+    "name": "#string",
+    "email": "#string",
+    "body": "#string"
+  }
+}
