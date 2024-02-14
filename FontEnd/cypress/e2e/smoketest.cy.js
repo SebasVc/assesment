@@ -16,7 +16,7 @@ describe('Suite de prueba opencart',()=>{
         cy.get('.alert').should('be.visible')       
     })
 
-    it("Ruta critica: añadir producto al carrito desde los featured del home",()=>{
+    it("Ruta critica: Buscar un producto y añadirlo al carrito",()=>{
         cy.get('.form-control').type("iMAC")
         cy.get('.input-group-btn > .btn').click()
         cy.get('#content > h1').should('be.visible')
@@ -24,7 +24,7 @@ describe('Suite de prueba opencart',()=>{
         cy.get('.alert').should('be.visible')
     })
 
-    it("Ruta critica: añadir producto al carrito desde los featured del home",()=>{
+    it("Ruta alterna: añadir producto al carrito desde los featured del home",()=>{
         cy.xpath('//*[@id="content"]/div[2]/div[1]/div/div[3]/button[1]').click();
         cy.get('.alert').should('be.visible')
 
@@ -40,7 +40,7 @@ describe('Suite de prueba opencart',()=>{
 
     })
 
-    it("Ruta critica: Login, añadir un producto y finalizar compra",()=>{
+    it("Ruta critica: Login, añadir un producto y validar mensaje de confirmacion de orden",()=>{
         cy.get('.list-inline > .dropdown > .dropdown-toggle').click()
         cy.get('.dropdown-menu > :nth-child(2) > a').click()
         cy.get(':nth-child(2) > .well > h2').contains("Returning Customer")
@@ -63,7 +63,7 @@ describe('Suite de prueba opencart',()=>{
         cy.get('#input-payment-city').type("Narnia")
         cy.get('#input-payment-postcode').type("08000")
         cy.get('#input-payment-country').select("47")
-        cy.wait(4000) // Espera 2 segundos
+        cy.wait(2000) // Espera 2 segundos
        cy.get('#input-payment-zone').select("Bolivar")
        cy.get('#button-payment-address').click()
        cy.get('#button-shipping-address').click()
@@ -71,7 +71,9 @@ describe('Suite de prueba opencart',()=>{
        cy.get('[type="checkbox"]').click()
        cy.get('#button-payment-method').click()
        cy.get('h2').contains("Bank Transfer Instructions")
-
+       cy.get('.well').should('be.visible')
+       cy.get('.well > :nth-child(2)').contains("Your order will not ship until we receive payment.")
+ 
 
     })
 
